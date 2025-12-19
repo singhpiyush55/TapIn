@@ -19,13 +19,15 @@ const userSchema = new mongoose.Schema({
     dob: {type: String},
     phone_no: {type: Number},
     email: {type: String},
+    password: {type: String},
     designation: {type: String}
 })
 
 const adminSchema = new mongoose.Schema({
-    name: {type: String},
-    email: {type: String},
-    phone_no: {type: Number}
+    name: {type: String, unique: true},
+    email: {type: String, unique: true},
+    password: {type: String, unique: true},
+    phone_no: {type: Number, unique: true}
 })
 
 const attendanceSchema = new mongoose.Schema({

@@ -17,6 +17,8 @@ dotenv.config();
 app.get('/', (req,res)=>{
     res.send('I am healthy and working fine!')
 });
+
+app.use(express.json());
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/admin', adminRoutes);
 app.use('/api/v1/events', eventRoutes);

@@ -40,7 +40,7 @@ router.post('/login', async (req, res)=>{
     if(foundAdmin){
         // Create and send JWT.
         const token = jwt.sign({email: result.data.email}, process.env.JWTSECRET);
-        res.status(400).json({token: token});
+        res.status(200).json({token: token});
     }else{
         res.status(404).send("user not found");
     }
@@ -68,7 +68,7 @@ router.post('/adduser', auth, async (req, res)=>{
         const createdUser = await Model.User.create(result.data);
         res.status(200).json({message: "User created succesfully."});
     }else{
-        res.send(result);
+        res.status(400).send("Failed");
     }
 })
 // router.get('/userporfile')

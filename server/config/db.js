@@ -33,7 +33,8 @@ const adminSchema = new mongoose.Schema({
 const attendanceSchema = new mongoose.Schema({
     rfid: {type: String},
     date: {type: String},
-    time: {type: String}
+    time: {type: String},
+    status: {type: String}
 })
 
 const User = mongoose.model('User', userSchema);

@@ -1,6 +1,7 @@
 // Library imports
 const express = require('express');
 const dotenv= require('dotenv');
+const cors = require('cors');
 
 
 //Module imports
@@ -19,6 +20,7 @@ app.get('/', (req,res)=>{
 });
 
 app.use(express.json());
+app.use(cors());
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/admin', adminRoutes);
 app.use('/api/v1/events', eventRoutes);

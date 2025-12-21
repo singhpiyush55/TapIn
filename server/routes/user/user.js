@@ -35,5 +35,10 @@ router.post('/login',async (req, res)=>{
 //router.get('/dashboard')
 //Fig out what to do.
 
+// When the user dashboard gets mounted from frontend.
+// -> it hits two following requests 
+// GET/api/v1/user/attendance (User version)
+// GET/api/v1/user/profile
+
 
 module.exports = router;

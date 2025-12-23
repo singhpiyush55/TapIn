@@ -22,7 +22,7 @@ function auth(req, res, next){
         const decoded = jwt.verify(token, process.env.JWTSECRET);
         // console.log(decoded);
         // no need to add the admin's email in the body as the body is carrying users data and we dont need this further.
-        req.body.apendedEmail = decoded.email;
+        req.user = decoded;
         next();
         //res.status(200).send("OK");
     }catch(err){

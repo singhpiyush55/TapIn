@@ -47,9 +47,6 @@ router.post('/login', async (req, res)=>{
 })
 
 
-// router.get('/dashboard')
-// Return the page
-
 router.post('/adduser', auth, async (req, res)=>{
 
     const userSchema = z.object({
@@ -71,7 +68,34 @@ router.post('/adduser', auth, async (req, res)=>{
         res.status(400).send("Failed");
     }
 })
+
 // router.get('/userporfile')
 // return the user profile. 
+// router.get('/dashboard')
+// Return the page
+
+
+
+// /api/v1/admin/adduser DONE
+
+// /api/v1/admin/userprofile : Returns the same user profile thing. i,e. redirect it to the user/profile
+// When admin click view-profile a POST request is made here. (Having the users id)
+// And i am supposed to return the that users profile datail.
+// And when the users profile is getting mounted it will hit /user/attendenc and get the attendence. 
+
+router.post('/userprofile', auth, async (req, res)=>{
+    // console.log(req.headers, req.body) => [Function: header] { userId: '694aff6f0b0e558df8e6334b' }
+    const foundUser = await Model.User.findById(req.body.userId)
+    res.status(200).json(foundUser);
+})
+
+
+
+// /api/v1/admin/dashboard : This will be called when the admin dashboard gets mounted. It will return basic details of the users.
+router.get('/dashboard', auth, async (req, res)=>{
+    const users = await Model.User.find();
+    // console.log(users);
+    res.status(200).json({users: users});
+})
 
 module.exports = router;

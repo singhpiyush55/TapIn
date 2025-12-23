@@ -651,7 +651,7 @@ function UserProfileView({ user, token }) {
 
   const fetchAttendance = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/v1/user/attendance`, {
+      const response = await fetch(`${API_BASE_URL}/api/v1/user/attendanceForAdmin`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

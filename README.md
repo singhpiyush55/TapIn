@@ -3,12 +3,12 @@
 ## Description
 A full-stack web application integrated with a sofisticated IoT system, that records user attendance using RFID/NFC and stores it securely in a database with real-time API integration.
 
-#3 Tech Stack
-Frontend: React, HTML, Tailwind CSS
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JWT
-Deployment: Vercel, AWS EC2 / Render
+## Tech Stack
+- Frontend: React, HTML, Tailwind CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT
+- Deployment: Vercel, AWS EC2 / Render
 
 ## IoT Components used
 ### ESP32

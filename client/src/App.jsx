@@ -70,12 +70,23 @@ function LandingPage({ onSignIn }) {
           <Clock className="w-8 h-8" />
           TapIn
         </div>
-        <button
-          onClick={onSignIn}
-          className="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
-        >
-          Sign In
-        </button>
+        <div className="flex items-center gap-4">
+          <a
+            href="/demo.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white font-semibold underline hover:text-gray-200"
+          >
+            DEMO
+          </a>
+
+          <button
+            onClick={onSignIn}
+            className="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
+          >
+            Sign In
+          </button>
+        </div>
       </nav>
 
       <div className="container mx-auto px-6 py-20">

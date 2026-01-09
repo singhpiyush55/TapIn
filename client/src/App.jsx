@@ -58,6 +58,8 @@ export default function App() {
           onLoginSuccess={handleLoginSuccess}
         />
       )}
+      
+      <Analytics />
     </div>
   );
 }
